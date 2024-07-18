@@ -50,8 +50,10 @@ int main(int argc, char **argv) {
     init(argc, argv);
 
     omp_init_lock(&lock1);
-    omp_init_lock_with_hint(&lock2, omp_lock_hint_contended);
-    omp_init_lock_with_hint(&lock3, omp_lock_hint_uncontended);
+    omp_init_lock(&lock2);
+    // omp_init_lock_with_hint(&lock2, omp_lock_hint_contended);
+    omp_init_lock(&lock3);
+    // omp_init_lock_with_hint(&lock3, omp_lock_hint_uncontended);
 
     /* GENERATE REFERENCE TIME */
     reference("reference time 1", &refer);
