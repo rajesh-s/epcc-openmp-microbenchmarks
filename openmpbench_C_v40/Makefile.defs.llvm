@@ -1,0 +1,4 @@
+CC=~/llvm-project/install/bin/clang
+CFLAGS = -fopenmp
+LDFLAGS = -fopenmp -frtlib-add-rpath
+LIBS = -lm  

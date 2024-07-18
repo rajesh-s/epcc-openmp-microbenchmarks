@@ -1,4 +1,4 @@
-include Makefile.defs
+include Makefile.defs.gcc
 
 .c.o:
 	${CC} ${CFLAGS} -c $*.c
