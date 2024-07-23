@@ -1,4 +1,4 @@
-include Makefile.defs
+include Makefile.defs.gcc
 
 # If CFLAGS_CRAY is empty set it to CFLAGS
 ifeq ($(CFLAGS_CRAY),)

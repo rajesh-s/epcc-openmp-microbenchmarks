@@ -1,0 +1,5 @@
+
+CC=~/gcc-14.1.0/install/bin/gcc
+CFLAGS = -fopenmp  -DOMPVER2 -DOMPVER3
+LDFLAGS = -fopenmp -Wl,-rpath=/home/rajsha01/gcc-14.1.0/install/lib64
+LIBS = -lm -lgomp
