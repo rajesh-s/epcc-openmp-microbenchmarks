@@ -15,7 +15,14 @@ export OMP_NUM_THREADS=64
 taskset -c 0-63 ./syncbench --measureonly BARRIER > barrier_64t
 export OMP_NUM_THREADS=80
 taskset -c 0-79 ./syncbench --measureonly BARRIER > barrier_80t
+export OMP_NUM_THREADS=96
+taskset -c 0-95 ./syncbench --measureonly BARRIER > barrier_96t
+export OMP_NUM_THREADS=128
+taskset -c 0-127 ./syncbench --measureonly BARRIER > barrier_128t
+export OMP_NUM_THREADS=144
+taskset -c 0-143 ./syncbench --measureonly BARRIER > barrier_144t
 mkdir llvm && mv barrier_* llvm/
+
 
 sed -i '1s/.*/include Makefile.defs.gcc/' Makefile
 make clean && make syncbench
@@ -34,4 +41,10 @@ export OMP_NUM_THREADS=64
 taskset -c 0-63 ./syncbench --measureonly BARRIER > barrier_64t
 export OMP_NUM_THREADS=80
 taskset -c 0-79 ./syncbench --measureonly BARRIER > barrier_80t
+export OMP_NUM_THREADS=96
+taskset -c 0-95 ./syncbench --measureonly BARRIER > barrier_96t
+export OMP_NUM_THREADS=128
+taskset -c 0-127 ./syncbench --measureonly BARRIER > barrier_128t
+export OMP_NUM_THREADS=144
+taskset -c 0-143 ./syncbench --measureonly BARRIER > barrier_144t
 mkdir gcc && mv barrier_* gcc/
